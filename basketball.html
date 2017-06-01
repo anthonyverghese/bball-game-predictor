@@ -5,6 +5,7 @@
 
 <head>
 
+<script src="http://d3js.org/d3.v3.min.js"></script>
 <link href='https://fonts.googleapis.com/css?family=Lato:400,300italic' rel='stylesheet' type='text/css'>
 
 <!-- Random fonts I've used before -->
@@ -72,11 +73,56 @@ h1{
 
 
 <!-- The graphs should only be displayed once a game is chosen. The first graph will be of points scored in the past -->
-<!-- 5-10 games. One team will have dots with the color of its team color (might be hard to do) and the other will --> 
-<!-- have dots with the color of its team color as well. We can show this scatter plot and put a straight line, y=x, for easier visualization -->
-
-
-
+<!-- 5-10 games. We should make them bar charts or histograms-->
+<br>
+<br>
+<h2>Points scored by Warriors and Cavaliers in past 5 games</h2>
+<script> 
+	<!-- Creates the points scored bar graph-->
+	<!-- As of right now, I don't know how to work with two arrays, so the array is [Warriors' points 5 games ago, Cavs' points 5 games ago, Warriors points 4 games ago, Cavs' points 4 games ago, etc.] -->
+	var warriorsAndCavsPointsArray = [80, 70, 90, 75, 95, 90, 85, 95, 100, 80];
+	var width = 1500;
+	var height = 1500;
+	var i = 0;
+	
+	var widthScale = d3.scale.linear()
+						.domain([0, 100])
+						.range([0, width]);
+	
+	var axis = d3.svg.axis()
+					.scale(widthScale);
+					
+	var canvas = d3.select("body").append("svg")
+					.attr("width", width)
+					.attr("height", width)
+					.append("g")
+					.attr("transform", "translate(50, 50)")
+					
+	var bars = canvas.selectAll("rect")
+		            .data(warriorsAndCavsPointsArray)
+					.enter()
+						.append("rect")
+						.attr("width", function (d) { return widthScale(d);})
+						.attr("height", 95)
+						<!-- I should probably put this function in an external js file -->
+						.attr("fill", function (d) { 
+						<!-- Warriors' bars will be red, and Cavs' bars will be blue -->
+						if (i % 2 == 0){
+							i = i + 1;
+							return "red";
+						}
+						i = i + 1;
+						return "blue";
+						})
+						.attr("y", function(d, i) {return i*100;});
+	<!-- Adds axis to the bar graph -->
+	<!-- We need to add a y axis! -->
+	canvas.append("g")
+		.attr("transform", "translate(0, 1000)")
+		.call(axis);
+		
+	<!-- We should also add in transitions/delays to make the bar charts more dynamic-->
+</script>
 
 <!-- The second graph can do the same thing as the first one but compare blocks -->
 
