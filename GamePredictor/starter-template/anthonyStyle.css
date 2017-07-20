@@ -1,0 +1,388 @@
+/*Animation specifics for Cavs Image*/
+body{
+	text-align: center;
+}
+.cavs{
+  margin: auto;	
+  transition: all linear 1.5s;
+  background-image: url("cavs.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 950px;
+  height: 800px;
+  width: 100%;
+  position: relative;
+  top: 0;
+  left: 0;
+}
+/*Animation specifics for Warriors image*/
+.warriors{
+  display: block;
+    margin: auto;
+  transition: all linear 1.5s;
+  background-image: url("warriors.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 950px;
+  height: 800px;
+  width: 100%;
+  position: relative;
+  top: 0;
+  left: 0;
+}
+.wizards{
+  margin: auto;	
+  transition: all linear 1.5s;
+  background-image: url("wizards.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 950px;
+  height: 800px;
+  width: 100%;
+  position: relative;
+  top: 0;
+  left: 0;
+}
+.celtics{
+  margin: auto;	
+  transition: all linear 1.5s;
+  background-image: url("celtics.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 950px;
+  height: 800px;
+  width: 100%;
+  position: relative;
+  top: 0;
+  left: 0;
+}
+.knicks{
+  margin: auto;
+  transition: all linear 1.5s;
+  background-image: url("knicks.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 950px;
+  height: 800px;
+  width: 100%;
+  position: relative;
+  top: 0;
+  left: 0;
+}
+.raptors{
+  margin: auto;
+  transition: all linear 1.5s;
+  background-image: url("raptors.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 950px;
+  height: 800px;
+  width: 100%;
+  position: relative;
+  top: 0;
+  left: 0;
+}
+.nets{
+  margin: auto;
+  transition: all linear 1.5s;
+  background-image: url("nets.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 950px;
+  height: 800px;
+  width: 100%;
+  position: relative;
+  top: 0;
+  left: 0;
+}
+.sixers{
+  margin: auto;
+  transition: all linear 1.5s;
+  background-image: url("76ers.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 950px;
+  height: 800px;
+  width: 100%;
+  position: relative;
+  top: 0;
+  left: 0;
+}
+.bulls{
+  margin: auto;
+  transition: all linear 1.5s;
+  background-image: url("bulls.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 950px;
+  height: 800px;
+  width: 100%;
+  position: relative;
+  top: 0;
+  left: 0;
+}
+.pistons{
+  margin: auto;
+  transition: all linear 1.5s;
+  background-image: url("pistons.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 950px;
+  height: 800px;
+  width: 100%;
+  position: relative;
+  top: 0;
+  left: 0;
+}
+.pacers{
+  margin: auto;
+  transition: all linear 1.5s;
+  background-image: url("pacers.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 950px;
+  height: 800px;
+  width: 100%;
+  position: relative;
+  top: 0;
+  left: 0;
+}
+.bucks{
+  margin: auto;
+  transition: all linear 1.5s;
+  background-image: url("bucks.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 950px;
+  height: 800px;
+  width: 100%;
+  position: relative;
+  top: 0;
+  left: 0;
+}
+.hawks{
+  margin: auto;
+  transition: all linear 1.5s;
+  background-image: url("hawks.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 950px;
+  height: 800px;
+  width: 100%;
+  position: relative;
+  top: 0;
+  left: 0;
+}
+.hornets{
+  margin: auto;
+  transition: all linear 1.5s;
+  background-image: url("hornets.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 950px;
+  height: 800px;
+  width: 100%;
+  position: relative;
+  top: 0;
+  left: 0;
+}
+.heat{
+  margin: auto;
+  transition: all linear 1.5s;
+  background-image: url("heat.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 950px;
+  height: 800px;
+  width: 100%;
+  position: relative;
+  top: 0;
+  left: 0;
+}
+.magic{
+  margin: auto;
+  transition: all linear 1.5s;
+  background-image: url("magic.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 950px;
+  height: 800px;
+  width: 100%;
+  position: relative;
+  top: 0;
+  left: 0;
+}
+.nuggets{
+  margin: auto;
+  transition: all linear 1.5s;
+  background-image: url("nuggets.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 950px;
+  height: 800px;
+  width: 100%;
+  position: relative;
+  top: 0;
+  left: 0;
+}
+.timberwolves{
+  margin: auto;
+  transition: all linear 1.5s;
+  background-image: url("timberwolves.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 950px;
+  height: 800px;
+  width: 100%;
+  position: relative;
+  top: 0;
+  left: 0;
+}
+.thunder{
+  margin: auto;
+  transition: all linear 1.5s;
+  background-image: url("thunder.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 950px;
+  height: 800px;
+  width: 100%;
+  position: relative;
+  top: 0;
+  left: 0;
+}
+.trailblazers{
+  margin: auto;
+  transition: all linear 1.5s;
+  background-image: url("trailblazers.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 950px;
+  height: 800px;
+  width: 100%;
+  position: relative;
+  top: 0;
+  left: 0;
+}
+.jazz{
+  margin: auto;
+  transition: all linear 1.5s;
+  background-image: url("jazz.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 950px;
+  height: 800px;
+  width: 100%;
+  position: relative;
+  top: 0;
+  left: 0;
+}
+.clippers{
+  margin: auto;
+  transition: all linear 1.5s;
+  background-image: url("clippers.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 950px;
+  height: 800px;
+  width: 100%;
+  position: relative;
+  top: 0;
+  left: 0;
+}
+.lakers{
+  margin: auto;
+  transition: all linear 1.5s;
+  background-image: url("lakers.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 950px;
+  height: 800px;
+  width: 100%;
+  position: relative;
+  top: 0;
+  left: 0;
+}
+.suns{
+  margin: auto;
+  transition: all linear 1.5s;
+  background-image: url("suns.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 950px;
+  height: 800px;
+  width: 100%;
+  position: relative;
+  top: 0;
+  left: 0;
+}
+.kings{
+  margin: auto;
+  transition: all linear 1.5s;
+  background-image: url("kings.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 950px;
+  height: 800px;
+  width: 100%;
+  position: relative;
+  top: 0;
+  left: 0;
+}
+/*Hide Animation*/
+.ng-hide {
+  height: 0;
+  width: 0;
+  background-color: transparent;
+  top:-200px;
+  left: 200px;
+}
+h1{
+	font-family: 'Anton', sans-serif;
+	color: blue;
+}
+.dropbtn {
+    background-color: orange;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown-original {
+    position: relative;
+    display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content-original {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content-original a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content-original a:hover {background-color: #f1f1f1}
+
+/* Show the dropdown menu on hover */
+.dropdown-original:hover .dropdown-content-original {
+    display: block;
+}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown-original:hover .dropbtn {
+    background-color: #3e8e41;
+}
