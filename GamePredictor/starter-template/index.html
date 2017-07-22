@@ -17,13 +17,14 @@
 <script src="pointsChart.js"></script>
 <script src="blocksChart.js"></script>
 <script src="threePointersChart.js"></script>
-<script src="random.js"></script>
+<script src="navigateSlowly.js"></script>
+<script src="functions.js"></script>
 <link rel = "stylesheet"
    type = "text/css"
    href = "anthonyStyle.css" />
 <body ng-app="ngAnimate">
   <div class="navbar-fixed">
-    <nav>
+    <nav id="navBarColor">
       <div class="nav-wrapper">
          <div class="col s12">
         <a href="#favTeamDiv" class="breadcrumb">Step 1</a>
@@ -36,10 +37,10 @@
   </div>
     <div class="container">
       <br><br>
-      <h1 class="header center orange-text">Game Predictor</h1>
+      <h1 class="header center titleText">Game Predictor</h1>
       <div class="row center">
-        <h5 class="header col s12 light">Steph will no longer be the smartest player on the court, you will!</h5>
-		<h5 class="header col s12 light">Click the buttons above to navigate throughout the site</h5>
+        <h5 class="header col s12 light titleText">Steph will no longer be the smartest player on the court, you will!</h5>
+		<h5 class="header col s12 light titleText">Click the buttons above to navigate throughout the site</h5>
       </div>
       <br><br>
 
@@ -51,52 +52,55 @@
 <br><br><br><br><br><br><br><br>
 </div>	
 <ul class="collection with-header">
-<li class="collection-header"><h4>Pick your Favorite Team</h4></li>
-        <a href="#!" class="collection-item active" ng-click="atlanticTeams=!atlanticTeams">Atlantic Division</a>
+<li class="collection-header"><div><h4 class="titleText">Pick your Favorite Team</h4></div></li>
+        <a href="#!" class="collection-item active activeText" ng-click="atlanticTeams=!atlanticTeams">Atlantic Division</a>
 		<div class="collection" ng-show="atlanticTeams">
-		<a ng-hide="myFavCeltics" ng-click="myFavCeltics=true;" class="collection-item">Celtics</a>
-		<a ng-hide="myFavNets" ng-click="myFavNets=true;" class="collection-item" background-color="green">Nets</a>
-		<a ng-hide="myFavKnicks" ng-click="myFavKnicks=true;" class="collection-item">Knicks</a>
-		<a ng-hide="myFavSixers" ng-click="myFavSixers=true;" class="collection-item">76ers</a>
-		<a ng-hide="myFavRaptors" ng-click="myFavRaptors=true;" class="collection-item">Raptors</a>
+		<a onclick="changeColor('celtics')" ng-hide="myFavCeltics" ng-click="myFavCeltics=true;" class="collection-item">Celtics</a>
+		<a onclick="changeColor('nets')" ng-hide="myFavNets" ng-click="myFavNets=true;" class="collection-item" background-color="green">Nets</a>
+		<a onclick="changeColor('knicks')" ng-hide="myFavKnicks" ng-click="myFavKnicks=true;" class="collection-item">Knicks</a>
+		<a onclick="changeColor('sixers')" ng-hide="myFavSixers" ng-click="myFavSixers=true;" class="collection-item">76ers</a>
+		<a onclick="changeColor('raptors')" ng-hide="myFavRaptors" ng-click="myFavRaptors=true;" class="collection-item">Raptors</a>
 	</div>
-        <a href="#!" class="collection-item active" ng-click="centralTeams=!centralTeams">Central Division</a>
+        <a href="#!" class="collection-item active activeText" ng-click="centralTeams=!centralTeams">Central Division</a>
 		<div class="collection" ng-show="centralTeams">
-		    <a ng-hide="myFavBulls" ng-click="myFavBulls=true;" class="collection-item">Bulls</a>
-			<a ng-hide="myFavCavs" ng-click="myFavCavs=true;" class="collection-item">Cavs</a>
-			<a ng-hide="myFavPistons" ng-click="myFavPistons=true;" class="collection-item">Pistons</a>
-			<a ng-hide="myFavPacers" ng-click="myFavPacers=true;" class="collection-item">Pacers</a>
-			<a ng-hide="myFavBucks" ng-click="myFavBucks=true;" class="collection-item">Bucks</a>
+		    <a onclick="changeColor('bulls')" ng-hide="myFavBulls" ng-click="myFavBulls=true;" class="collection-item">Bulls</a>
+			<a onclick="changeColor('cavs')" ng-hide="myFavCavs" ng-click="myFavCavs=true;" class="collection-item">Cavs</a>
+			<a onclick="changeColor('pistons')" ng-hide="myFavPistons" ng-click="myFavPistons=true;" class="collection-item">Pistons</a>
+			<a onclick="changeColor('pacers')" ng-hide="myFavPacers" ng-click="myFavPacers=true;" class="collection-item">Pacers</a>
+			<a onclick="changeColor('bucks')" ng-hide="myFavBucks" ng-click="myFavBucks=true;" class="collection-item">Bucks</a>
 		</div>
-        <a href="#!" class="collection-item active" ng-click="southeastTeams=!southeastTeams">Southeast Division</a>
+        <a href="#!" class="collection-item active activeText" ng-click="southeastTeams=!southeastTeams">Southeast Division</a>
 		<div class="collection" ng-show="southeastTeams">
-		   <a ng-hide="myFavHaws" ng-click="myFavHawks=true;" class="collection-item">Hawks</a> 
-		   <a ng-hide="myFavHornets" ng-click="myFavHornets=true;" class="collection-item">Hornets</a> 
-		   <a ng-hide="myFavHeat" ng-click="myFavHeat=true;" class="collection-item">Heat</a> 
-		   <a ng-hide="myFavMagic" ng-click="myFavMagic=true;" class="collection-item">Magic</a> 
-		   <a ng-hide="myFavWizards" ng-click="myFavWizards=true;" class="collection-item">Wizards</a> 
+		   <a onclick="changeColor('hawks')" ng-hide="myFavHawks" ng-click="myFavHawks=true;" class="collection-item">Hawks</a> 
+		   <a onclick="changeColor('hornets')" ng-hide="myFavHornets" ng-click="myFavHornets=true;" class="collection-item">Hornets</a> 
+		   <a onclick="changeColor('heat')" ng-hide="myFavHeat" ng-click="myFavHeat=true;" class="collection-item">Heat</a> 
+		   <a onclick="changeColor('magic')" ng-hide="myFavMagic" ng-click="myFavMagic=true;" class="collection-item">Magic</a> 
+		   <a onclick="changeColor('wizards')" ng-hide="myFavWizards" ng-click="myFavWizards=true;" class="collection-item">Wizards</a> 
 			
 		</div>
-		<a href="#!" class="collection-item active" ng-click="northwestTeams=!northwestTeams">Northwest Division</a>
+		<a href="#!" class="collection-item active activeText" ng-click="northwestTeams=!northwestTeams">Northwest Division</a>
 		<div class="collection" ng-show="northwestTeams">
-		<a ng-hide="myFavNuggets" ng-click="myFavNuggets=true;" class="collection-item">Nuggets</a> 
-		<a ng-hide="myFavTimberwolves" ng-click="myFavTimberwolves=true;" class="collection-item">Timberwolves</a> 
-		<a ng-hide="myFavThunder" ng-click="myFavThunder=true;" class="collection-item">Thunder</a>
-		<a ng-hide="myFavTrailblazers" ng-click="myFavTrailblazers=true;" class="collection-item">Trailblazers</a>
-		<a ng-hide="myFavJazz" ng-click="myFavJazz=true;" class="collection-item">Jazz</a>		
+		<a onclick="changeColor('nuggets')" ng-hide="myFavNuggets" ng-click="myFavNuggets=true;" class="collection-item">Nuggets</a> 
+		<a onclick="changeColor('timberwolves')" ng-hide="myFavTimberwolves" ng-click="myFavTimberwolves=true;" class="collection-item">Timberwolves</a> 
+		<a onclick="changeColor('thunder')" ng-hide="myFavThunder" ng-click="myFavThunder=true;" class="collection-item">Thunder</a>
+		<a onclick="changeColor('trailblazers')" ng-hide="myFavTrailblazers" ng-click="myFavTrailblazers=true;" class="collection-item">Trailblazers</a>
+		<a onclick="changeColor('jazz')" ng-hide="myFavJazz" ng-click="myFavJazz=true;" class="collection-item">Jazz</a>		
 		   
 		</div>
-		<a href="#!" class="collection-item active" ng-click="pacificTeams=!pacificTeams">Pacific Division</a>
+		<a href="#!" class="collection-item active activeText" ng-click="pacificTeams=!pacificTeams">Pacific Division</a>
 		<div class="collection" ng-show="pacificTeams">
-		<a ng-hide="myFavWarriors" ng-click="myFavWarriors=true;" class="collection-item">Warriors</a>	
-		<a ng-hide="myFavClippers" ng-click="myFavClippers=true;" class="collection-item">Clippers</a>	
-		<a ng-hide="myFavLakers" ng-click="myFavLakers=true;" class="collection-item">Lakers</a>
-		<a ng-hide="myFavSuns" ng-click="myFavSuns=true;" class="collection-item">Suns</a>	
-		<a ng-hide="myFavKings" ng-click="myFavKings=true;" class="collection-item">Kings</a>			
+		<a onclick="changeColor('warriors')" ng-hide="myFavWarriors" ng-click="myFavWarriors=true;" class="collection-item">Warriors</a>	
+		<a onclick="changeColor('clippers')" ng-hide="myFavClippers" ng-click="myFavClippers=true;" class="collection-item">Clippers</a>	
+		<a onclick="changeColor('lakers')" ng-hide="myFavLakers" ng-click="myFavLakers=true;" class="collection-item">Lakers</a>
+		<a onclick="changeColor('suns')" ng-hide="myFavSuns" ng-click="myFavSuns=true;" class="collection-item">Suns</a>	
+		<a onclick="changeColor('kings')" ng-hide="myFavKings" ng-click="myFavKings=true;" class="collection-item">Kings</a>			
 		</div>
-		<a href="#!" class="collection-item active" ng-click="southwestTeams=!southwestTeams">Southwest Division</a>
+		<a href="#!" class="collection-item active activeText" ng-click="southwestTeams=!southwestTeams">Southwest Division</a>
 		<div class="collection" ng-show="southwestTeams">
-		    
+		<a onclick="changeColor('mavs')" ng-hide="myFavMavs" ng-click="myFavMavs=true;" class="collection-item">Mavs</a>
+		<a onclick="changeColor('rockets')" ng-hide="myFavRockets" ng-click="myFavRockets=true;" class="collection-item">Rockets</a>
+		<a onclick="changeColor('grizzlies')" ng-hide="myFavGrizzlies" ng-click="myFavGrizzlies=true;" class="collection-item">Grizzlies</a>
+		<a onclick="changeColor('pelicans')" ng-hide="myFavPelicans" ng-click="myFavGrizzlies=true;" class="collection-item">Pelicans</a>
 		</div>
 </div>
 
@@ -126,18 +130,22 @@
 <div class="lakers" ng-show="myFavLakers"></div>
 <div class="suns" ng-show="myFavSuns"></div>
 <div class="kings" ng-show="myFavKings"></div>
+<div class="mavs" ng-show="myFavMavs"></div>
+<div class="rockets" ng-show="myFavRockets"></div>
+<div class="grizzlies" ng-show="myFavGrizzlies"></div>
+<div class="pelicans" ng-show="myFavPelicans"></div>
 </div>
-<a href="#predictGameDiv" class="waves-effect waves-light btn-large"><i class="material-icons right">play_for_work</i>That was fun, now let's go to the next steps to actually predict some games</a>
+<a href="#predictGameDiv" class="waves-effect waves-light btn-large btn2"><i class="material-icons right">play_for_work</i>That was fun, now let's go to the next steps to actually predict some games</a>
 <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 
 <!--User should have the choice of predicting a game. We should dynamically generate the list of games coming up-->
 <div id="predictGameDiv">
 <br><br>
  <ul class="collection with-header">
-        <li class="collection-header"><h4>Upcoming Games</h4></li>
-        <a onclick="myFunction1()" class="collection-item">Cavs vs. Warriors</a>
-        <a onclick="myFunction1()" class="collection-item active">Knicks vs. Raptors</a>
-        <a onclick="myFunction1()" class="collection-item">Celtics vs. Wizards</a>
+        <li class="collection-header"><h4 class="titleText">Upcoming Games</h4></li>
+        <a onclick="myFunction1()" class="collection-item titleText">Cavs vs. Warriors</a>
+        <a onclick="myFunction1()" class="collection-item titleText">Knicks vs. Raptors</a>
+        <a onclick="myFunction1()" class="collection-item titleText">Celtics vs. Wizards</a>
       </div>
 </div>
 <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
@@ -148,11 +156,11 @@
 </div>
 <div class="col s12 m4" id="chart_div"></div>
 <!--When this button is clicked, it calls the function myFunction(), from pointsChart.js, which displays the points graph-->
-<button class ="dropbtn" type="button" onclick="myFunction1()">Compare Points!</button>
+<button class = "dropbtn btn2" type="button"onclick="myFunction1()">Compare Points!</button>
 <!--When this button is clicked, it calls the function myFunction2(), from blocksChart.js, which displays the blocks graph-->
-<button class ="dropbtn" type="button" onclick="myFunction2()">Compare Blocks!</button>
+<button class = "dropbtn btn2" type="button" onclick="myFunction2()">Compare Blocks!</button>
 <!--When this button is clicked, it calls the function myFunction3(), from threePointersChart.js, which displays the three-pointers graph-->
-<button class ="dropbtn" type="button" onclick="myFunction3()">Compare Three-pointers!</button>
+<button class = "dropbtn btn2" type="button" onclick="myFunction3()">Compare Three-pointers!</button>
 <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 <!--We should create the algorithm in javascript and then return the predicted winner here-->
 <div ng-init="mySwitch=false">
@@ -160,9 +168,9 @@
 <div id="algorithmDiv">
 <br><br><br><br><br><br><br><br><br><br><br><br>
 </div>
-<button class = "dropbtn" ng-click="mySwitch=true">Click Me to display what the Verghese Kundu algorithm determined!</button>
+<button id="button" class = "dropbtn btn2" ng-click="mySwitch=true">Click Me to display what the Verghese Kundu algorithm determined!</button>
 <div ng-show="mySwitch">
-<p>And the winner is....the Wizards!</p>
+<p class="titleText">And the winner is....the Wizards!</p>
 </div>
 </div>
 </p>
@@ -175,7 +183,7 @@
       <div class="row">
         <div class="col s12 m4">
           <div class="icon-block">
-            <h2 class="center light-blue-text"><i class="material-icons">flash_on</i></h2>
+            <h2 class="center light-blue-text"><i class="material-icons titleText">flash_on</i></h2>
             <h5 class="center">Fast Predictions</h5>
 
             <p class="light">Quickly use our algorithm to determine who will win the next big game. Your friends will be impressed by your success game after game.</p>
@@ -184,7 +192,7 @@
 
         <div class="col s12 m4">
           <div class="icon-block">
-            <h2 class="center light-blue-text"><i class="material-icons">assessment</i></h2>
+            <h2 class="center light-blue-text"><i class="material-icons titleText">assessment</i></h2>
             <h5 class="center">Analysis</h5>
 
             <p class="light">We care about how you traverse through the site, so we made sure that you are able to analyze information with charts rather than just numbers.</p>
@@ -193,7 +201,7 @@
 
         <div class="col s12 m4">
           <div class="icon-block">
-            <h2 class="center light-blue-text"><i class="material-icons">thumb_up</i></h2>
+            <h2 class="center light-blue-text"><i class="material-icons titleText">thumb_up</i></h2>
             <h5 class="center">Easy to use</h5>
 
             <p class="light">Our site's relatively simple user interface makes it very easy to better understand the dynamics of NBA teams and how certain statistics serve as very strong predictors.</p>
@@ -205,7 +213,7 @@
     <br><br>
   </div>
 
-  <footer class="page-footer orange">
+  <footer class="page-footer" id="footerColor">
     <div class="container">
       <div class="row">
         <div class="col l6 s12">

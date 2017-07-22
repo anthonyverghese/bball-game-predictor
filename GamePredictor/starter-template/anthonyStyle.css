@@ -1,6 +1,11 @@
 /*Animation specifics for Cavs Image*/
 body{
 	text-align: center;
+	-webkit-transition: all 3s ease-in-out;
+	-moz-transition: all 3s ease-in-out;
+	-o-transition: all 3s ease-in-out;
+	-ms-transition: all 3s ease-in-out;
+	transition: all 3s ease-in-out;
 }
 .cavs{
   margin: auto;	
@@ -319,7 +324,72 @@ body{
 .kings{
   margin: auto;
   transition: all linear 1.5s;
-  background-image: url("kings.jpg");
+  background-image: url("kings.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 950px;
+  height: 800px;
+  width: 100%;
+  position: relative;
+  top: 0;
+  left: 0;
+}
+.mavs{
+  margin: auto;
+  transition: all linear 1.5s;
+  background-image: url("mavs.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 950px;
+  height: 800px;
+  width: 100%;
+  position: relative;
+  top: 0;
+  left: 0;
+}
+.rockets{
+  margin: auto;
+  transition: all linear 1.5s;
+  background-image: url("rockets.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 950px;
+  height: 800px;
+  width: 100%;
+  position: relative;
+  top: 0;
+  left: 0;
+}
+.grizzlies{
+  margin: auto;
+  transition: all linear 1.5s;
+  background-image: url("grizzlies.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 950px;
+  height: 800px;
+  width: 100%;
+  position: relative;
+  top: 0;
+  left: 0;
+}
+.pelicans{
+  margin: auto;
+  transition: all linear 1.5s;
+  background-image: url("pelicans.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 950px;
+  height: 800px;
+  width: 100%;
+  position: relative;
+  top: 0;
+  left: 0;
+}
+.spurs{
+  margin: auto;
+  transition: all linear 1.5s;
+  background-image: url("spurs.png");
   background-repeat: no-repeat;
   background-position: center;
   background-size: 950px;
@@ -339,7 +409,7 @@ body{
 }
 h1{
 	font-family: 'Anton', sans-serif;
-	color: blue;
+	color: orange;
 }
 .dropbtn {
     background-color: orange;

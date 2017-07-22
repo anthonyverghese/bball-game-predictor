@@ -4,6 +4,7 @@ google.charts.load('current', {
 });
 google.charts.setOnLoadCallback(drawChart);
 
+
 function drawChart() {
   var jsonData = {
     "cols": [{

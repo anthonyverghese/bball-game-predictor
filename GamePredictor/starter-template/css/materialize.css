@@ -2863,7 +2863,7 @@ ul.staggered-list li {
 
 .page-footer {
   padding-top: 20px;
-  background-color: #ee6e73;
+  background-color: orange;
 }
 
 .page-footer .footer-copyright {
@@ -3062,6 +3062,11 @@ td, th {
 .collection .collection-item.active {
   background-color: #26a69a;
   color: #eafaf9;
+  -webkit-transition: all 3s ease-in-out;
+	-moz-transition: all 3s ease-in-out;
+	-o-transition: all 3s ease-in-out;
+	-ms-transition: all 3s ease-in-out;
+	transition: all 3s ease-in-out;
 }
 
 .collection .collection-item.active .secondary-content {
@@ -4187,6 +4192,11 @@ nav {
   width: 100%;
   height: 56px;
   line-height: 56px;
+  -webkit-transition: all 3s ease-in-out;
+-moz-transition: all 3s ease-in-out;
+	-o-transition: all 3s ease-in-out;
+	-ms-transition: all 3s ease-in-out;
+	transition: all 3s ease-in-out;
 }
 
 nav.nav-extended {
