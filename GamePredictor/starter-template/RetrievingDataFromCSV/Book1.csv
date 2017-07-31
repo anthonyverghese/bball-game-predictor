@@ -1,0 +1,4 @@
+﻿city,lat,lon,population,isCapital
+"""Tel Aviv"" ",32.09,34.78,1318300,FALSE
+"""Jerusalem""",31.76,35.22,780517,TRUE
+"""Gaza City""",31.52,34.45,515556,FALSE
