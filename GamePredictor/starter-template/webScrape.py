@@ -1,8 +1,5 @@
 from urllib.request import urlopen as uReq
 from bs4 import BeautifulSoup as soup
-import numpy as pd
-import pandas as pd
-import pandas.io.data as web
 
 
 my_url = 'http://www.nba.com/summerleague/2017/scores'
@@ -27,21 +24,21 @@ i = 0
 j = 0
 myList = [0,0,0,0,0,0,0,0]
 for Nam, Scor in zip(containersTwo, containers):
-	print("hi")
 	teamNam = Nam.text.strip()
 	scorVal = Scor.text.strip()
-	print(teamNam)
-	print(i)
-	if (teamNam == "CHA" and i < 4):
+	if (teamNam == "CLE" and i < 4):
+		print(teamNam)
 		print("scorVal.type")
+		print(scorVal)
 		myList[2*i] = scorVal
 		i=i+1
 		
-	if (teamNam == "SAC" and j < 4):
+	if (teamNam == "GSW" and j < 4):
 		myList[2*j+1] = scorVal
 		j=j+1
+		
 for x in range(0,8,2):
-	print("mathew: ", type(int(myList[x])), type(int(myList[x + 1])));
+	print("Anthony: ", type(int(myList[x])), type(int(myList[x + 1])));
 	f.write("cat" + str(int(x/2) + 1) + ",{0}, {1} \n".format(int(myList[x]), int(myList[x + 1])));
 f.close()
 
