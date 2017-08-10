@@ -1,0 +1,15 @@
+.axis {
+            font-size: 13px;
+        }
+        
+        .axis path,
+        .axis line {
+            fill: none;
+            stroke-width: 1px;
+            stroke: #000;
+            shape-rendering: crispEdges;
+        }
+        
+        .label {
+            font-size: 13px;
+        }

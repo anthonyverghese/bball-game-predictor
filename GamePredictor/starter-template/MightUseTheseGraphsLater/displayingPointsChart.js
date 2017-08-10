@@ -1,40 +1,5 @@
-<!DOCTYPE html>
-<html>
-
-<head>
-    <meta charset='utf-8' />
-    <title>Grouped bar chart</title>
-    <script src="https://d3js.org/d3.v3.min.js" charset="utf-8"></script>
-    <style>
-        body {
-            font-family: "Arial", sans-serif;
-        }
-        
-        .axis {
-            font-size: 13px;
-        }
-        
-        .axis path,
-        .axis line {
-            fill: none;
-            stroke-width: 1px;
-            stroke: #000;
-            shape-rendering: crispEdges;
-        }
-        
-        .label {
-            font-size: 13px;
-        }
-    </style>
-
-</head>
-
-<body>
-
-    <div id="graphic"></div>
-
-    <script>
-	<!--Should dynamically generate colors based on team's colors-->
+<!--Should dynamically generate colors based on team's colors-->
+	
         var COLORS = ["#4391b5", "#d2d2d2"],
             LABELS = ["Team1", "Team2"],
             VALUES = ["val0", "val1"],
@@ -85,7 +50,7 @@
             var width = 960 - margin.left - margin.right,
                 height = 500 - margin.top - margin.bottom;
 
-            var svg = d3.select("#graphic").append("svg")
+            var svg = d3.select("#chart_div").append("svg")
                 .attr("width", width + margin.left + margin.right)
                 .attr("height", height + margin.top + margin.bottom)
                 .append("g")
@@ -216,13 +181,8 @@
                     return d.value;
                 });
         }
-        d3.csv("official.csv", function (rates) {
+        d3.csv("data1.csv", function (rates) {
             data = rates;
             groupedChart();
         })
-		
-    </script>
-
-</body>
-
-</html>
+	
