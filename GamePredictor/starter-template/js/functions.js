@@ -109,4 +109,20 @@ function changeColor(myFavTeam){
 	}
 	
 		
-};	
+}
+var num;
+var teamName1;
+var teamName2;
+function initializeTeamNum(teamNum){
+	num = teamNum;
+	if (num == 1){
+		teamName1 = "Cavaliers";
+		teamName2 = "Warriors";
+}else if (num == 2){
+	teamName1 = "Knicks";
+		teamName2 = "Raptors";
+}else{
+	teamName1 = "Celtics";
+		teamName2 = "Wizards";
+}
+};

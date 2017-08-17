@@ -10,7 +10,7 @@ body{
 .cavs{
   margin: auto;	
   transition: all linear 1.5s;
-  background-image: url("Images/cavs.jpg");
+  background-image: url("../Images/cavs.jpg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: 950px;
@@ -25,7 +25,7 @@ body{
   display: block;
     margin: auto;
   transition: all linear 1.5s;
-  background-image: url("Images/warriors.jpg");
+  background-image: url("../Images/warriors.jpg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: 950px;
@@ -38,7 +38,7 @@ body{
 .wizards{
   margin: auto;	
   transition: all linear 1.5s;
-  background-image: url("Images/wizards.jpg");
+  background-image: url("../Images/wizards.jpg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: 950px;
@@ -51,7 +51,7 @@ body{
 .celtics{
   margin: auto;	
   transition: all linear 1.5s;
-  background-image: url("Images/celtics.png");
+  background-image: url("../Images/celtics.png");
   background-repeat: no-repeat;
   background-position: center;
   background-size: 950px;
@@ -64,7 +64,7 @@ body{
 .knicks{
   margin: auto;
   transition: all linear 1.5s;
-  background-image: url("Images/knicks.jpg");
+  background-image: url("../Images/knicks.jpg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: 950px;
@@ -77,7 +77,7 @@ body{
 .raptors{
   margin: auto;
   transition: all linear 1.5s;
-  background-image: url("Images/raptors.jpg");
+  background-image: url("../Images/raptors.jpg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: 950px;
@@ -90,7 +90,7 @@ body{
 .nets{
   margin: auto;
   transition: all linear 1.5s;
-  background-image: url("Images/nets.jpg");
+  background-image: url("../Images/nets.jpg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: 950px;
@@ -103,7 +103,7 @@ body{
 .sixers{
   margin: auto;
   transition: all linear 1.5s;
-  background-image: url("Images/76ers.jpg");
+  background-image: url("../Images/76ers.jpg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: 950px;
@@ -116,7 +116,7 @@ body{
 .bulls{
   margin: auto;
   transition: all linear 1.5s;
-  background-image: url("Images/bulls.jpg");
+  background-image: url("../Images/bulls.jpg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: 950px;
@@ -129,7 +129,7 @@ body{
 .pistons{
   margin: auto;
   transition: all linear 1.5s;
-  background-image: url("Images/pistons.jpg");
+  background-image: url("../Images/pistons.jpg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: 950px;
@@ -142,7 +142,7 @@ body{
 .pacers{
   margin: auto;
   transition: all linear 1.5s;
-  background-image: url("Images/pacers.jpg");
+  background-image: url("../Images/pacers.jpg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: 950px;
@@ -155,7 +155,7 @@ body{
 .bucks{
   margin: auto;
   transition: all linear 1.5s;
-  background-image: url("Images/bucks.jpg");
+  background-image: url("../Images/bucks.jpg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: 950px;
@@ -168,7 +168,7 @@ body{
 .hawks{
   margin: auto;
   transition: all linear 1.5s;
-  background-image: url("Images/hawks.jpg");
+  background-image: url("../Images/hawks.jpg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: 950px;
@@ -181,7 +181,7 @@ body{
 .hornets{
   margin: auto;
   transition: all linear 1.5s;
-  background-image: url("Images/hornets.jpg");
+  background-image: url("../Images/hornets.jpg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: 950px;
@@ -194,7 +194,7 @@ body{
 .heat{
   margin: auto;
   transition: all linear 1.5s;
-  background-image: url("Images/heat.jpg");
+  background-image: url("../Images/heat.jpg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: 950px;
@@ -207,7 +207,7 @@ body{
 .magic{
   margin: auto;
   transition: all linear 1.5s;
-  background-image: url("Images/magic.jpg");
+  background-image: url("../Images/magic.jpg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: 950px;
@@ -220,7 +220,7 @@ body{
 .nuggets{
   margin: auto;
   transition: all linear 1.5s;
-  background-image: url("Images/nuggets.jpg");
+  background-image: url("../Images/nuggets.jpg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: 950px;
@@ -233,7 +233,7 @@ body{
 .timberwolves{
   margin: auto;
   transition: all linear 1.5s;
-  background-image: url("Images/timberwolves.jpg");
+  background-image: url("../Images/timberwolves.jpg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: 950px;
@@ -246,7 +246,7 @@ body{
 .thunder{
   margin: auto;
   transition: all linear 1.5s;
-  background-image: url("Images/thunder.jpg");
+  background-image: url("../Images/thunder.jpg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: 950px;
@@ -259,7 +259,7 @@ body{
 .trailblazers{
   margin: auto;
   transition: all linear 1.5s;
-  background-image: url("Images/trailblazers.jpg");
+  background-image: url("../Images/trailblazers.jpg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: 950px;
@@ -272,7 +272,7 @@ body{
 .jazz{
   margin: auto;
   transition: all linear 1.5s;
-  background-image: url("Images/jazz.jpg");
+  background-image: url("../Images/jazz.jpg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: 950px;
@@ -285,7 +285,7 @@ body{
 .clippers{
   margin: auto;
   transition: all linear 1.5s;
-  background-image: url("Images/clippers.jpg");
+  background-image: url("../Images/clippers.jpg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: 950px;
@@ -298,7 +298,7 @@ body{
 .lakers{
   margin: auto;
   transition: all linear 1.5s;
-  background-image: url("Images/lakers.jpg");
+  background-image: url("../Images/lakers.jpg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: 950px;
@@ -311,7 +311,7 @@ body{
 .suns{
   margin: auto;
   transition: all linear 1.5s;
-  background-image: url("Images/suns.jpg");
+  background-image: url("../Images/suns.jpg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: 950px;
@@ -324,7 +324,7 @@ body{
 .kings{
   margin: auto;
   transition: all linear 1.5s;
-  background-image: url("Images/kings.png");
+  background-image: url("../Images/kings.png");
   background-repeat: no-repeat;
   background-position: center;
   background-size: 950px;
@@ -337,7 +337,7 @@ body{
 .mavs{
   margin: auto;
   transition: all linear 1.5s;
-  background-image: url("Images/mavs.jpg");
+  background-image: url("../Images/mavs.jpg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: 950px;
@@ -350,7 +350,7 @@ body{
 .rockets{
   margin: auto;
   transition: all linear 1.5s;
-  background-image: url("Images/rockets.jpg");
+  background-image: url("../Images/rockets.jpg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: 950px;
@@ -363,7 +363,7 @@ body{
 .grizzlies{
   margin: auto;
   transition: all linear 1.5s;
-  background-image: url("Images/grizzlies.jpg");
+  background-image: url("../Images/grizzlies.jpg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: 950px;
@@ -376,7 +376,7 @@ body{
 .pelicans{
   margin: auto;
   transition: all linear 1.5s;
-  background-image: url("Images/pelicans.jpg");
+  background-image: url("../Images/pelicans.jpg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: 950px;
@@ -389,7 +389,7 @@ body{
 .spurs{
   margin: auto;
   transition: all linear 1.5s;
-  background-image: url("Images/spurs.png");
+  background-image: url("../Images/spurs.png");
   background-repeat: no-repeat;
   background-position: center;
   background-size: 950px;

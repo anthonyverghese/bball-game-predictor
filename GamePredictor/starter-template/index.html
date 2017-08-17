@@ -6,21 +6,21 @@
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
   <title>Starter Template - Materialize</title>
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <!-- CSS  -->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
   <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>	
+  	 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-animate.js"></script>
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 <script src="https://d3js.org/d3.v3.min.js"></script>
-<script src="displayingPointsChart.js"></script>
-<script src="pointsChart.js"></script>
-<script src="blocksChart.js"></script>
-<script src="threePointersChart.js"></script>
+<!-- <script src="displayingPointsChart.js"></script> -->
+<!-- <script src="pointsChart.js"></script> -->
+<!-- <script src="blocksChart.js"></script> -->
+<!-- <script src="threePointersChart.js"></script> -->
 <script src="js/navigateSlowly.js"></script>
 <script src="js/functions.js"></script>
 <link rel = "stylesheet"
@@ -165,23 +165,55 @@
         .label {
             font-size: 13px;
         }
+		table {
+  margin: 0 auto;
+  text-align: center;
+  border-collapse: collapse;
+  border: 1px solid #d4d4d4;
+}
+ 
+tr:nth-child(even) {
+  background: #d4d4d4;
+}
+ 
+th, td {
+  padding: 10px 30px;
+}
+ 
+th {
+  border-bottom: 1px solid #d4d4d4;
+}  
 </style>
-
-<!--The following is the d3 javascript code that displays the grouped bar chart. The points scored in the past four games-->
-<!--of the two teams is displayed in this grouped bar chart. This javascript is displaying in this html file because-->
-<!--I have been having issues with displaying the graph-->
-<div id="graphic"></div>
 <script>
+var cat1String;
+var cat2String;
+var cat3String;
+var cat4String;
+function initializeAxisNames(graphNum){
+if (graphNum == 1){
+	cat1String = "FourGames Ago";
+	cat2String = "Three Games Ago";
+	cat3String = "Two Games Ago";
+	cat4String = "Last Game";
+}else if (graphNum == 2){
+	cat1String = "PPG";
+	cat2String = "OPPG";
+	cat3String = "RPG";
+	cat4String = "APG";
+}
+}
+	
 	<!--Should dynamically generate colors based on team's colors-->
+	function displayPointsOfTeams(num, num2){
         var COLORS = ["#4391b5", "#d2d2d2"],
-            LABELS = ["Team1", "Team2"],
+            LABELS = [teamName1, teamName2],
             VALUES = ["val0", "val1"],
             CATEGORIES = {
-                cat1: "Four Games Ago",
-                cat2: "Three Games Ago",
-                cat3: "Two Games Ago",
-                cat4: "Last Game"
-            },
+                cat1: cat1String,
+                cat2: cat2String,
+                cat3: cat3String,
+                cat4: cat4String
+			},
             data;
 
         function wrap2(text, width, startingx) {
@@ -224,7 +256,7 @@
                 height = 500 - margin.top - margin.bottom;
 			
 			console.log("log1");
-            var svg = d3.select("#graphic").append("svg")
+            var svg = d3.select("#graphic" + num2).append("svg")
                 .attr("width", width + margin.left + margin.right)
                 .attr("height", height + margin.top + margin.bottom)
                 .append("g")
@@ -360,22 +392,140 @@
                 });
 				console.log("log6");
         }
-        d3.csv("data1.csv", function (rates) {
-            data = rates;
-            groupedChart();
-        })
+		if (num2 == 1){
+			d3.csv("data" + num + ".csv", function (rates) {
+				data = rates;
+				groupedChart();
+			})
+		}else{
+		d3.csv("twodata" + num + ".csv", function (rates) {
+				data = rates;
+				groupedChart();
+			})
+		}
+		}
+		<!--When the bottom-left corner refresh button is pressed, it refreshes the page and moves to the beginning of the survey-->
+        function Restart() {
+            location.reload();
+            window.location.hash = '#predictGameDiv';
+        }
+		function displayExplanation(questionNum){
+			 document.getElementById("helpInfo").innerHTML = "";
+                        var headerAnswer = document.createElement("h3");
+                        var headerVal = document.createTextNode("Why display this information?\n");
+                        headerAnswer.appendChild(headerVal);
+						if (questionNum == 1){
+						var newPar = document.createTextNode("If you want to have a strong understanding of how teams are doing, always look at their most recent games.");
+                        }
+						else if (questionNum == 2){
+						var newPar = document.createTextNode("You do not only want to look at recent history, because short-term injuries or simple losing streaks can cause anomalies. Thus, these season statistics are very useful for comparison.");
+						}
+						document.getElementById("helpInfo").appendChild(headerAnswer);
+                        document.getElementById("helpInfo").appendChild(newPar);
+                        $('.tap-target').tapTarget('open');
+						
+		}
+var sum=0;
+var sum2=0;
+		function displayAlgorithm(){
+		$.ajax({
+  url: "data" + num + ".csv",
+  dataType: 'text',
+}).done(successFunction);
+function successFunction(data) {
+  var allRows = data.split(/\r?\n|\r/);
+  for (var singleRow = 0; singleRow < allRows.length; singleRow++) {
+    var rowCells = allRows[singleRow].split(',');
+    for (var rowCell = 0; rowCell < rowCells.length; rowCell++) {
+      if (singleRow != 0 && rowCell != 0) {
+	  if (rowCell%2 == 0){
+        sum2 += (parseFloat(rowCells[rowCell])/10);
+		console.log("sum2" + sum2);
+      }else{
+		sum += (parseFloat(rowCells[rowCell])/10);
+		console.log("sum" + sum);
+	  }
+	  }
+    }
+  } 
+}
+$.ajax({
+  url: "twodata" + num + ".csv",
+  dataType: 'text',
+}).done(successFunction2);
+function successFunction2(data) {
+console.log('yo');
+  var allRows = data.split(/\r?\n|\r/);
+  for (var singleRow = 0; singleRow < allRows.length; singleRow++) {
+    var rowCells = allRows[singleRow].split(',');
+    for (var rowCell = 0; rowCell < rowCells.length; rowCell++) {
+      if (singleRow != 0 && rowCell != 0) {
+	  if (rowCell%2 == 0){
+	  console.log('hi');
+		if (singleRow == 1 || singleRow == 3){
+			sum2 += parseFloat(rowCells[rowCell]);
+			console.log("sum2" + sum2);
+		}else if (singleRow == 2){
+			sum2 -= parseFloat(rowCells[rowCell]);
+			console.log("sum2" + sum2);
+		}else if (singleRow == 4){
+			sum2 += (2*parseFloat(rowCells[rowCell]));
+			console.log("sum2" + sum2);
+		}
 		
+      }else{
+		if (singleRow == 1 || singleRow == 3){
+			sum += parseFloat(rowCells[rowCell]);
+			console.log("sum" + sum);
+		}else if (singleRow == 2){
+			sum -= parseFloat(rowCells[rowCell]);
+			console.log("sum" + sum);
+		}else if (singleRow == 4){
+			sum += (2*parseFloat(rowCells[rowCell]));
+			console.log("sum" + sum);
+		}
+	  }
+	  }
+    }
+	if (sum > sum2){
+		document.getElementById("algorithmDisplayed").innerHTML = ("And the winner is...." + teamName1);
+	}else{
+		document.getElementById("algorithmDisplayed").innerHTML = ("And the winner is...." + teamName2);
+	}
+  } 
+
+}
+};
     </script>
 	
+ <!--Bottom-left corner refresh button. Calls Restart() function when clicked-->
+                <div class="fixed-action-btn" style="bottom: 50px; left: -88%">
+                    <a href="#survey" onclick="Restart()" class="btn btn-floating btn-large cyan"><i class="material-icons">refresh</i></a>
+                </div>	
+				
+				  <!-- Tap Target Structure in the bottom-right corner. The pop-up thing in the right corner. -->
+                <div class="fixed-action-btn" style="bottom: 50px; right: 24px;">
+                    <a onclick="$('.tap-target').tapTarget('open'), displayAnswerEarly()" id="menu" class="btn btn-floating btn-large cyan"><i class="material-icons">menu</i></a>
+                </div>
+                <div class="tap-target-wrapper close" style="right: -347.667px; bottom: -327.333px; position: fixed;">
+                    <div class="tap-target cyan" data-activates="menu">
+                        <div class="tap-target-content white-text" style="width: 456px; height: 400px; top: 0px; right: 0px; bottom: 0px; left: 0px; padding: 56px; vertical-align: bottom;">
+                            <h5></h5>
+                            <p id="helpInfo" class="white-text" style="font-size:80%"></p>
+                        </div>
+                    </div>
+                    <div onclick="displayAllAnswers()" class="tap-target-wave" style="top: 344px; left: 344px; width: 112px; height: 112px;"><a class="btn btn-floating btn-large cyan tap-target-origin"><i class="material-icons">menu</i></a></div>
+                </div>
+
 <!--User should have the choice of predicting a game. We should dynamically generate the list of games coming up. As of right now,-->
 <!--I am just including three default upcoming games-->
 <div id="predictGameDiv">
 <br><br>
  <ul class="collection with-header">
         <li class="collection-header"><h4 class="titleText">Upcoming Games</h4></li>
-        <a  class="collection-item titleText">Cavs vs. Warriors</a>
-        <a  class="collection-item titleText">Knicks vs. Raptors</a>
-        <a  class="collection-item titleText">Celtics vs. Wizards</a>
+        <a href = "#graphic1" class="collection-item titleText" onclick="initializeTeamNum(1)">Cavs vs. Warriors</a>
+        <a href = "#graphic1" class="collection-item titleText" onclick="initializeTeamNum(2)">Knicks vs. Raptors</a>
+        <a href = "#graphic1" class="collection-item titleText" onclick="initializeTeamNum(3)">Celtics vs. Wizards</a>
       </div>
 </div>
 <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
@@ -386,22 +536,28 @@
 </div>
 <div class="col s12 m4" id="chart_div"></div>
 
+<!--The following is the d3 javascript code that displays the grouped bar chart.-->
+<div id="graphic1"><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br></div>
 <!--When this button is clicked, it calls the function myFunction1(), from pointsChart.js, which displays the points graph-->
-<button class = "dropbtn btn2" type="button"onclick="myFunction1()">Compare Points!</button>
-<!--When this button is clicked, it calls the function myFunction2(), from blocksChart.js, which displays the blocks graph-->
-<button class = "dropbtn btn2" type="button" onclick="myFunction2()">Compare Blocks!</button>
-<!--When this button is clicked, it calls the function myFunction3(), from threePointersChart.js, which displays the three-pointers graph-->
-<button class = "dropbtn btn2" type="button" onclick="myFunction3()">Compare Three-pointers!</button>
+<button class = "dropbtn btn2" type="button"onclick="initializeAxisNames(1), displayPointsOfTeams(num, 1), displayExplanation(1)">Compare Points!</button>
+<a class = "dropbtn btn2" type="button" href="#graphic2">Move on to next graph!</a>
 <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-<!--We should create the algorithm in javascript and then return the predicted winner here-->
+
+
+<!--The following is the d3 javascript code that displays the grouped bar chart.-->
+<div id="graphic2"><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br></div>
+<!--When this button is clicked, it calls the function myFunction2(), from blocksChart.js, which displays the blocks graph-->
+<button class = "dropbtn btn2" type="button" onclick="initializeAxisNames(2), displayPointsOfTeams(num, 2), displayExplanation(2)">Compare PPG, APG, etc!</button>
+<a class = "dropbtn btn2" type="button" href="#algorithmDiv">Display Winner!</a>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 <div ng-init="mySwitch=false">
 <p>
 <div id="algorithmDiv">
 <br><br><br><br><br><br><br><br><br><br><br><br>
 </div>
-<button id="button" class = "dropbtn btn2" ng-click="mySwitch=true">Click Me to display what the algorithm determined!</button>
+<button id="button" class = "dropbtn btn2" ng-click="mySwitch=true" onclick="displayAlgorithm()">Click Me to display what the algorithm determined!</button>
 <div ng-show="mySwitch">
-<p class="titleText">And the winner is....the Wizards!</p>
+<p id="algorithmDisplayed"></p>
 </div>
 </div>
 </p>
