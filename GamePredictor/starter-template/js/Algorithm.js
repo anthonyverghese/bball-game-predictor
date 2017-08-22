@@ -3,7 +3,7 @@ var sum = 0;
 
             function displayAlgorithm() {
                 $.ajax({
-                    url: "data" + num + ".csv",
+                    url: "csv/data" + num + ".csv",
                     dataType: 'text',
                 }).done(successFunction);
 
@@ -25,7 +25,7 @@ var sum = 0;
                     }
                 }
                 $.ajax({
-                    url: "twodata" + num + ".csv",
+                    url: "csv/twodata" + num + ".csv",
                     dataType: 'text',
                 }).done(successFunction2);
 
@@ -72,7 +72,7 @@ var sum = 0;
 
                 }
                 $.ajax({
-                    url: "threedata" + num + ".csv",
+                    url: "csv/threedata" + num + ".csv",
                     dataType: 'text',
                 }).done(successFunction3);
 

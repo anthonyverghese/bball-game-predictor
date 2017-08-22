@@ -211,17 +211,17 @@ var cat1String;
                     console.log("log6");
                 }
                 if (num2 == 1) {
-                    d3.csv("data" + num + ".csv", function(rates) {
+                    d3.csv("csv/data" + num + ".csv", function(rates) {
                         data = rates;
                         groupedChart();
                     })
                 } else if (num2 == 2) {
-                    d3.csv("twodata" + num + ".csv", function(rates) {
+                    d3.csv("csv/twodata" + num + ".csv", function(rates) {
                         data = rates;
                         groupedChart();
                     })
                 } else if (num2 == 3) {
-                    d3.csv("fourdata" + num + ".csv", function(rates) {
+                    d3.csv("csv/fourdata" + num + ".csv", function(rates) {
                         data = rates;
                         groupedChart();
                     })
