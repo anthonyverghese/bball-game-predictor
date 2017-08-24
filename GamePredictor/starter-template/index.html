@@ -24,7 +24,7 @@
 <!--External javascript file that slows down page traversal when link is clicked-->
 <script src="js/navigateSlowly.js"></script>
 <!--External javascript file that helps with changing colors on page when favorite team is clicked-->
-<script src="js/functions.js"></script>
+<script src="js/initColorAndMatch.js"></script>
 <!--External javascript file that helps with displaying graphs and initializing axis names-->
 <script src="js/graphs.js"></script>
 <!--External javascript file that has functions to restart web page and display help in bottom-right corner-->
@@ -60,8 +60,8 @@
         <br><br>
     </div>
     </div>
-    <!--This div, favTeamDiv, is where the site displays the image of your favorite team and updates the colors on the page. Functions 
-	<!--from functions.js are called to make the colors change. In addition, AngularJS is used to make the animations, which is what 
+    <!--This div, favTeamDiv, is where the site displays the image of your favorite team and updates the colors on the page. initColorAndMatch 
+	<!--from initColorAndMatch.js are called to make the colors change. In addition, AngularJS is used to make the animations, which is what 
 	<!--causes the images to come in slowly.-->
     <div id="favTeamDiv">
         <br><br><br><br><br><br><br><br>
@@ -211,27 +211,27 @@
         <!--The following div, graphic1, is where the first chart is displayed. This chart displays the points scored in the last four games of the two teams-->
         <div id="graphic1"><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br></div>
         <!--When this button is clicked, it calls the function initializeAxisNames(), which determines what the axis names should be based on which team match-up was chosen.
-		<!--In addition, it calls the function displayPointsOfTeams(), which displays the corresponding grouped bar chart for the match-up. Finally, it calls
+		<!--In addition, it calls the function displayGraphOfTeams(), which displays the corresponding grouped bar chart for the match-up. Finally, it calls
 		<!--displayExplanation(), which displays the corresponding explanation for why the statistics in the graph are important.-->
-        <button class="dropbtn btn2" type="button" onclick="initializeAxisNames(1), displayPointsOfTeams(num, 1), displayExplanation(1)">Compare Points!</button>
+        <button class="dropbtn btn2" type="button" onclick="initializeAxisNames(1), displayGraphOfTeams(num, 1), displayExplanation(1)">Compare Points!</button>
         <a class="dropbtn btn2" type="button" href="#graphic2">Move on to next graph!</a>
         <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 
         <!--The following div, graphic2, is where the second chart is displayed. This chart displays PPG, OPPG, RPG, and APG of the two teams. -->
         <div id="graphic2"><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br></div>
         <!--When this button is clicked, it calls the function initializeAxisNames(), which determines what the axis names should be based on which team match-up was chosen.
-		<!--In addition, it calls the function displayPointsOfTeams(), which displays the corresponding grouped bar chart for the match-up. Finally, it calls
+		<!--In addition, it calls the function displayGraphOfTeams(), which displays the corresponding grouped bar chart for the match-up. Finally, it calls
 		<!--displayExplanation(), which displays the corresponding explanation for why the statistics in the graph are important.-->
-        <button class="dropbtn btn2" type="button" onclick="initializeAxisNames(2), displayPointsOfTeams(num, 2), displayExplanation(2)">Compare PPG, APG, etc!</button>
+        <button class="dropbtn btn2" type="button" onclick="initializeAxisNames(2), displayGraphOfTeams(num, 2), displayExplanation(2)">Compare PPG, APG, etc!</button>
         <a class="dropbtn btn2" type="button" href="#graphic3">Move on to next graph!</a>
         <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 
         <!--The following div, graphic2, is where the third chart is displayed. This chart displays FG PCT, OPP FG PCT, 3PT PCT, and OPP 3 PT PCT-->
         <div id="graphic3"><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br></div>
         <!--When this button is clicked, it calls the function initializeAxisNames(), which determines what the axis names should be based on which team match-up was chosen.
-		<!--In addition, it calls the function displayPointsOfTeams(), which displays the corresponding grouped bar chart for the match-up. Finally, it calls
+		<!--In addition, it calls the function displayGraphOfTeams(), which displays the corresponding grouped bar chart for the match-up. Finally, it calls
 		<!--displayExplanation(), which displays the corresponding explanation for why the statistics in the graph are important.-->
-        <button class="dropbtn btn2" type="button" onclick="initializeAxisNames(3), displayPointsOfTeams(num, 3), displayExplanation(3)">Compare field goal percentages!</button>
+        <button class="dropbtn btn2" type="button" onclick="initializeAxisNames(3), displayGraphOfTeams(num, 3), displayExplanation(3)">Compare field goal percentages!</button>
         <a class="dropbtn btn2" type="button" href="#algorithmDiv">Display Winner!</a>
         <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 

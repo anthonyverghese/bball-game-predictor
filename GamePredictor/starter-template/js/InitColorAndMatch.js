@@ -1,3 +1,5 @@
+//There are two functions in initColorAndMatch.js. The first function, changeColor(), updates the background color as well as 
+//the colors of various buttons and texts, after a favorite team has been chosen. 
 function changeColor(myFavTeam){
 	if (myFavTeam=="warriors" || myFavTeam==="wizards" || myFavTeam==="knicks" || myFavTeam==="thunder" || myFavTeam==="sixers" || myFavTeam==="clippers" || myFavTeam==="mavs" || myFavTeam==="pistons" || myFavTeam==="magic" || myFavTeam==="hornets"){
 		document.getElementById("navBarColor").style.backgroundColor = "blue";
@@ -106,13 +108,14 @@ function changeColor(myFavTeam){
 	}
 	if (myFavTeam==="heat" || myFavTeam==="cavs" || myFavTeam==="raptors" || myFavTeam==="bulls" || myFavTeam==="rockets" || myFavTeam==="sixers" || myFavTeam==="hawks" || myFavTeam==="pistons" || myFavTeam==="clippers" || myFavTeam==="trailblazers" || myFavTeam==="wizards"){
 		document.body.style.backgroundColor = "#ff6666";
-	}
-	
-		
+	}		
 }
 var num;
 var teamName1;
 var teamName2;
+//initializeTeamNum() is the second function in InitColorAndMatch.js. This function initializes the global variable num, as well 
+//as the global variables teamName1 and teamName2. These values are used in the d3 code, to determine which data to take and display
+//in the graphs. num=1 corresponds to the first matchup displayed, num=2 corresponds to the second matchup displayed, etc. 
 function initializeTeamNum(teamNum){
 	num = teamNum;
 	if (num == 1){
